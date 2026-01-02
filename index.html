@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FuelWeb</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="layout">
+    <div class="left">
+      <input type="text" name="input" id="vehicle-input" placeholder="Search Vehicle">
+      <div class="vehicleoptions">
+        <ul id="vehicleList"></ul>
+      </div>
+    </div>
+    <div class="right">
+      <div class="top">
+        <h3 id="vehicleTitle">Fuel Entry</h3>
+      </div>
+      <div class="bottom">
+        <div id="sheetContainer">
+
+          <table id="txnTable">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Ltr</th>
+                <th>Rate</th>
+                <th>Amount</th>
+                <th>User</th>
+                <th>Prev. Odo</th>
+                <th>Curr. Odo</th>
+                <th>Total Km</th>
+                <th>KMPL</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <button id="addEntryBtn" style="display:none;">+ Add Entry</button>
+
+        <form id="addEntryForm" style="display:none;">
+          <table id="entryFormTable">
+            <tr>
+              <td> <input class="entryInput" type="number" name="prevOdo" id="prevOdo" placeholder="Prev Odo"  readonly/></td>
+              <td> <input class="entryInput" type="number" name="currOdo" id="currOdo" placeholder="Curr Odo" required /></td>
+              <td> <input class="entryInput" type="number" name="totalKm" id="totalKm" placeholder="Total"  readonly/></td>
+              <td> <input class="entryInput" type="number" name="vol" id="vol" placeholder="Liters" required step="any"/> </td>
+              <td> <input class="entryInput" type="number" name="rate" id="rate" placeholder="Rate" required step="any"/> </td>
+              <td> <input class="entryInput" type="number" name="amt" id="totalAmt" placeholder="Amount" readonly /></td>
+              <td> <input class="entryInput" type="number" name="kmpl" id="kmpl" placeholder="KMPL"  readonly/></td>
+              <td><input class="entryInput" type="text" name="user" id="user" placeholder="Responsible Person" required></td>
+              <td><input class="entryInput" type="text" name="remarks" placeholder="Remarks" id="remarks"></td>
+            </tr>
+          </table>
+          <button type="submit">Save</button>
+          <button type="button" id="cancelAdd">Cancel</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</body>
+<!-- <script src="script.js"></script>  -->
+<script type="module" src="scriptFetch.js"></script>
+<!-- This will consist all main scripts like fetch -->
+
+</html>
